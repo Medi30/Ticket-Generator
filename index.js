@@ -130,7 +130,7 @@ var invalidtext = {
 }
 
 var regexes = {
-    name : /^[A-Za-z]+(?: [A-Za-z]+)*$/,
+    name : /^[\p{L}]+(?: [\p{L}]+)*$/u,
     email : /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     git : /^&[a-zA-Z0-9-]{0,38}$/
 }
