@@ -4,7 +4,7 @@
     src: url(assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
 }
 
-@media (min-width: 375px){
+@media (min-width: 475px){
 body{
     background-position: 10% -20%,80%,top right,bottom left;
     background-attachment: fixed;
@@ -19,7 +19,7 @@ body{
     }
 }
 
-@media (max-width: 375px){
+@media (max-width: 475px){
     body{
         background-position: -10% -8%,120% 60%,top right,bottom left;
         background-attachment: fixed;
@@ -68,13 +68,13 @@ body{
     display: none;
 }
 
-@media (max-width: 375px){
+@media (max-width: 475px){
     #inputcont{
         width: 300px;
     }
     }
     
-@media (min-width: 375px){
+@media (min-width: 475px){
     #inputcont{
         width: 400px;
     }
@@ -200,7 +200,7 @@ input:-webkit-autofill {
     left: -480px
 }
 
-@media (max-width: 375px){
+@media (max-width: 475px){
     #ticketSVG{
         width: 310px;
     }
