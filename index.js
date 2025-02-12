@@ -76,17 +76,16 @@ function uploadSelect(event){
 }
 
 /* Image Upload*/
-var errortext
+var errortext = document.querySelector("#uploadtext")
 var file
 var fileconvert
 function uploadIMG (event) {
     uploadBox.classList.remove("hoverover")
     uploadBox.classList.remove("highlight")
-    errortext = document.querySelector("#uploadtext")
     if (event){
         file = event.target.files[0]
     }
-    if (file && file.size <= 500000 && file.type === "image/jpeg" || file.type === "image/png"){
+    if (file && file.size <= 500000 && (file.type === "image/png" || file.type === "image/jpeg" )){
         var reader = new FileReader()
         reader.onload = function (event){
             document.querySelector("#uplogo").src = event.target.result
@@ -111,6 +110,11 @@ function uploadIMG (event) {
         document.querySelector("#dragdropText").classList.remove("hide")
         document.querySelector("#buttoncont").classList.add("hide")
         validtext["img"] = null
+        console.log("too large")
+    }else if (file.type != "image/png" || file.type != "image/jpeg" ){
+        errortext.innerHTML = '<img id="upsymbol" src="assets/images/icon-info.svg"> Wrong file format, Please upload JPG or PNG';
+        errortext.style.color = "red"
+        document.querySelector("#upsymbol").classList.add("uploadtextsymbol")
     }
 }
 
@@ -163,6 +167,11 @@ function generate(){
         document.querySelector("#secondHeader").classList.remove("hide")
         document.querySelector("#ticketSVG").classList.remove("hide")
         ticketGenerate()
+    }else if(!validtext["img"]){
+        console.log("no file")
+        errortext.innerHTML = '<img id="upsymbol" src="assets/images/icon-info.svg"> Please upload an image under 500KB';
+        errortext.style.color = "red"
+        document.querySelector("#upsymbol").classList.add("uploadtextsymbol")
     }
 }
 
