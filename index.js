@@ -76,7 +76,7 @@ function uploadSelect(event){
 }
 
 /* Image Upload*/
-var errortext = document.querySelector("#uploadtext")
+let errortext = document.querySelector("#uploadtext")
 var file
 var fileconvert
 function uploadIMG (event) {
@@ -156,7 +156,8 @@ function generate(){
         }else{
             validtext[key] = null
             invalidtext[key] = document.createElement("p")
-            invalidtext[key].textContent = "Please enter a valid " + [key] 
+            invalidtext[key].innerHTML = '<img class="uploadtextsymbol" src="assets/images/icon-info.svg"><span class="errortext"> Plase enter a valid ' + [key] +'.</span>'
+            //invalidtext[key].textContent = "Please enter a valid " + [key] 
             fields[key].parentNode.appendChild(invalidtext[key])
             invalidtext[key].classList.add("errortext")
             }
@@ -170,7 +171,8 @@ function generate(){
     }else if(!validtext["img"]){
         console.log("no file")
         errortext.innerHTML = '<img id="upsymbol" src="assets/images/icon-info.svg"> Please upload an image under 500KB';
-        errortext.style.color = "red"
+        errortext.style.color = "hsl(7, 71%, 60%)"
+        errortext.style.fontWeight = "500"
         document.querySelector("#upsymbol").classList.add("uploadtextsymbol")
     }
 }

@@ -176,8 +176,8 @@ input:-webkit-autofill {
 
 .errortext{
     font-size: small;
-    font-weight: 100;
-    color: red;
+    font-weight: 500;
+    color: hsl(7, 88%, 67%);
     margin-bottom: -15px;
 }
 
